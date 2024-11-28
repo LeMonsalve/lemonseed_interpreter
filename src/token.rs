@@ -1,9 +1,9 @@
-struct Token {
-    kind: TokenKind,
-    value: String,
+pub struct Token {
+    pub kind: TokenKind,
+    pub literal: String,
 }
 
-enum TokenKind {
+pub enum TokenKind {
     Illegal,
     Eof,
 
