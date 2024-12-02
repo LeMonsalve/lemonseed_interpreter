@@ -1,13 +1,14 @@
 use std::fmt::{Display, Formatter, Result};
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Default)]
 pub struct Token {
     pub kind: TokenKind,
     pub literal: String,
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Default)]
 pub enum TokenKind {
+    #[default]
     Illegal,
     EOF,
 
@@ -100,11 +101,11 @@ impl Display for TokenKind {
             TokenKind::Function => write!(f, "Function"),
             TokenKind::Variable => write!(f, "Variable"),
             TokenKind::Constant => write!(f, "Constant"),
-            TokenKind::True =>  write!(f, "True"),
-            TokenKind::False =>  write!(f, "False"),
-            TokenKind::If =>  write!(f, "If"),
-            TokenKind::Else =>  write!(f, "Else"),
-            TokenKind::Return =>  write!(f, "Return"),
+            TokenKind::True => write!(f, "True"),
+            TokenKind::False => write!(f, "False"),
+            TokenKind::If => write!(f, "If"),
+            TokenKind::Else => write!(f, "Else"),
+            TokenKind::Return => write!(f, "Return"),
         }
     }
 }
