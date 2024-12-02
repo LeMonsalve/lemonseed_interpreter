@@ -1,6 +1,6 @@
 use crate::token::{Token, TokenKind};
 
-struct Lexer {
+pub struct Lexer {
     input: Vec<char>,
     position: usize,
     read_position: usize,
@@ -8,7 +8,7 @@ struct Lexer {
 }
 
 impl Lexer {
-    fn new(input: &str) -> Self {
+    pub fn new(input: &str) -> Self {
         let mut lexer = Lexer {
             input: input.chars().collect(),
             position: 0,
@@ -21,7 +21,7 @@ impl Lexer {
         lexer
     }
 
-    fn next_token(&mut self) -> Token {
+    pub fn next_token(&mut self) -> Token {
         self.skip_whitespace();
 
         println!("next_token: {}", self.ch);
