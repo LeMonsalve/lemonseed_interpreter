@@ -44,10 +44,9 @@ pub enum TokenKind {
 
 impl Token {
     pub fn new<S: Into<String>>(kind: TokenKind, literal: S) -> Token {
-        let literal = literal.into();
         Token {
             kind,
-            literal,
+            literal: literal.into(),
         }
     }
 }
