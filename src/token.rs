@@ -40,6 +40,11 @@ pub enum TokenKind {
     Function,
     Variable,
     Constant,
+    True,
+    False,
+    If,
+    Else,
+    Return,
 }
 
 impl Token {
@@ -57,6 +62,11 @@ impl TokenKind {
             "function" => TokenKind::Function,
             "var" => TokenKind::Variable,
             "const" => TokenKind::Constant,
+            "true" => TokenKind::True,
+            "false" => TokenKind::False,
+            "if" => TokenKind::If,
+            "else" => TokenKind::Else,
+            "return" => TokenKind::Return,
             _ => TokenKind::Identifier,
         }
     }
@@ -90,6 +100,11 @@ impl Display for TokenKind {
             TokenKind::Function => write!(f, "Function"),
             TokenKind::Variable => write!(f, "Variable"),
             TokenKind::Constant => write!(f, "Constant"),
+            TokenKind::True =>  write!(f, "True"),
+            TokenKind::False =>  write!(f, "False"),
+            TokenKind::If =>  write!(f, "If"),
+            TokenKind::Else =>  write!(f, "Else"),
+            TokenKind::Return =>  write!(f, "Return"),
         }
     }
 }
