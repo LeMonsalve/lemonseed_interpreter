@@ -9,7 +9,7 @@ pub struct REPL {
 
 impl REPL {
     pub fn new(stdin: Stdin, stdout: Stdout) -> REPL {
-        REPL { stdin, stdout }
+        REPL { stdin, stdout } 
     }
 
     pub fn run(&mut self) {
@@ -40,7 +40,7 @@ impl REPL {
     }
 
     fn start(&mut self) {
-        write!(self.stdout, "Welcome to the LeMonSeed programming language REPL\n").expect("Unable to write to stdout");
+        write!(self.stdout, "LeMonSeed v0.0.1-BETA REPL\n").expect("Unable to write to stdout");
         write!(self.stdout, "Feel free to type in commands\n").expect("Unable to write to stdout");
     }
 }
